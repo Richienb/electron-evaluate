@@ -14,6 +14,6 @@ const result = await electronEvaluate(async () => {
 })
 ```
 */
-declare function electronEvaluate<ReturnValueType, ArgumentType>(function_: (...arguments_: ArgumentType[]) => ReturnValueType | PromiseLike<ReturnValueType>, arguments_?: ArgumentType[], options?: Nightmare.IConstructorOptions): Promise<ReturnValueType>
+declare function electronEvaluate<ReturnValueType, ArgumentType>(function_: (...arguments_: ArgumentType[]) => ReturnValueType | PromiseLike<ReturnValueType>, arguments_?: readonly ArgumentType[], options?: Nightmare.IConstructorOptions): Promise<ReturnValueType>
 
 export = electronEvaluate
