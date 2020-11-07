@@ -1,41 +1,45 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# electron-evaluate [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/electron-evaluate/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/electron-evaluate)
 
-My awesome module.
+Evaluate some code in an Electron context.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/electron-evaluate.png)](https://npmjs.com/package/electron-evaluate)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install electron-evaluate
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module")
+const electronEvaluate = require("electron-evaluate")
 
-theModule("unicorns")
-//=> "unicorns & rainbows"
+const result = await electronEvaluate(async () => {
+	// You can use Electron APIs here
+})
 ```
 
 ## API
 
-### theModule(input, options?)
+### electronEvaluate(function_, arguments_, options)
 
-#### input
+Returns a cancelable promise which resolves with the return value of `function_`. To cancel it, use `.cancel()` on the return value.
 
-Type: `string`
+#### function_
 
-Lorem ipsum.
+Type: `(...arguments_) => any | Promise<any>`
+
+The function to evaluate in the Electron context.
+
+#### arguments_
+
+Type: `any[]`
+
+An array of arguments to include as arguments when calling `function_`.
 
 #### options
 
 Type: `object`
 
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+Options to pass to [`new BrowserWindow()`](https://github.com/electron/electron/blob/master/docs/api/browser-window.md#new-browserwindowoptions).
