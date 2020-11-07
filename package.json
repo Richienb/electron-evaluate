@@ -1,6 +1,6 @@
 {
 	"name": "electron-evaluate",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Evaluate some code in an Electron context.",
 	"repository": "https://github.com/Richienb/electron-evaluate.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
